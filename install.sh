@@ -5,6 +5,7 @@ gpg_password=""
 remote_url=""
 git_user_name=""
 git_user_email=""
+repo_dir=""
 
 # Function to ask a question and store the answer
 ask_question() {
@@ -16,10 +17,10 @@ ask_question() {
 }
 
 # Ask questions and store answers
-ask_question "what is your gpg password?" gpg_password
 ask_question "what is the private remote_url? (e.g. git@github.com:your-username/my-obsidian-repo.git)" remote_url
-ask_question "what is git_user_name" git_user_name
-ask_question "what is your git_user_email" git_user_email
+ask_question "what is git_user_name?" git_user_name
+ask_question "what is your git_user_email?" git_user_email
+ask_question "what is the full path directory to the obisdian directory/repo? (e.g. /home/me/my-obisidian-repo/)?"
 
 # Display the collected information
 echo gpg_password
@@ -30,9 +31,10 @@ echo $git_user_email
 # Path to the Git push script
 SCRIPT_PATH="$(pwd)/daily-push.sh"
 
-echo "export OBSIDIAN_CRON_REPO_DIR=$SCRIPT_PATH" >> ~/.bashrc
+echo "# Obsidian Cron" >> ~/.bashrc
+echo "export OBSIDIAN_CRON_REPO_DIR=$repo_dir" >> ~/.bashrc
 # Change to your GPG password
-echo "export OBSIDIAN_CRON_GPG_PASSWORD='$gpg_password'" >> ~/.bashrc
+#echo "export OBSIDIAN_CRON_GPG_PASSWORD='$gpg_password'" >> ~/.bashrc
 # Change to your remote repository URL
 echo "export OBSIDIAN_CRON_REMOTE_URL=$remote_url" >> ~/.bashrc
 # Change to your Git user information
