@@ -20,7 +20,7 @@ ask_question() {
 ask_question "what is the private remote_url? (e.g. git@github.com:your-username/my-obsidian-repo.git)" remote_url
 ask_question "what is git_user_name?" git_user_name
 ask_question "what is your git_user_email?" git_user_email
-ask_question "what is the full path directory to the obisdian directory/repo? (e.g. /home/me/my-obisidian-repo/)?"
+ask_question "what is the full path directory to the obisdian directory/repo? (e.g. /home/me/my-obisidian-repo/)?" repo_dir
 
 # Display the collected information
 echo gpg_password

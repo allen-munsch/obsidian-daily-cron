@@ -16,6 +16,7 @@ echo "REPO_DIR: $REPO_DIR"
 pushd "$REPO_DIR"
 echo "Currently looking at: $(pwd)"
 git status
+git config commit.gpgsign false
 # Check if there are any changes
 if [[ -n $(git status -s) ]]; then
     # Add all changes
