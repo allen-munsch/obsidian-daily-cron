@@ -23,11 +23,11 @@ if [[ -n $(git status -s) ]]; then
     git commit --allow-empty-message -m "Empty commit"
 
     # Push changes
-    git push --set-upstream "$REMOTE_URL" HEAD:main
+    git push origin main
 else
     # Create and push an empty commit
     git commit --allow-empty -m "Empty commit"
-    git push --set-upstream "$REMOTE_URL" HEAD:main
+    git push origin main
 fi
 
 popd
