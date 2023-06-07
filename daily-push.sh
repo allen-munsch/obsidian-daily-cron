@@ -12,6 +12,7 @@ GIT_USER_NAME="$OBSIDIAN_CRON_GIT_USER_NAME"
 GIT_USER_EMAIL="$OBSIDIAN_CRON_GIT_USER_EMAIL"
 
 # Move to the repository directory
+echo "REPO_DIR: $REPO_DIR"
 pushd "$REPO_DIR"
 echo "Currently looking at: $(pwd)"
 gst
