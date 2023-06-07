@@ -27,6 +27,7 @@ echo gpg_password
 echo $remote_url
 echo $git_user_name
 echo $git_user_email
+echo $repo_dir
 
 # Path to the Git push script
 SCRIPT_PATH="$(pwd)/daily-push.sh"
