@@ -13,7 +13,8 @@ GIT_USER_EMAIL="$OBSIDIAN_CRON_GIT_USER_EMAIL"
 
 # Move to the repository directory
 pushd "$REPO_DIR"
-
+echo "Currently looking at: $(pwd)"
+gst
 # Check if there are any changes
 if [[ -n $(git status -s) ]]; then
     # Add all changes
