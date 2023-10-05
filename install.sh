@@ -34,6 +34,12 @@ SCRIPT_PATH="$(pwd)/daily-push.sh"
 
 echo "# Obsidian Cron" >> ~/.bashrc
 echo "export OBSIDIAN_CRON_REPO_DIR=$repo_dir" >> ~/.bashrc
+# Check that the repo_dir is a git repo and if not create it
+if ! git -C "$repo_dir" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "The path to the obsidian directory is not a Git repository. Initializing a new Git repository..."
+    git -C "$repo_dir" init
+    echo "Git repository initialized in $repo_dir."
+fi
 # Change to your GPG password
 #echo "export OBSIDIAN_CRON_GPG_PASSWORD='$gpg_password'" >> ~/.bashrc
 # Change to your remote repository URL
